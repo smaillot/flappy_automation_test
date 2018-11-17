@@ -1,6 +1,8 @@
 <launch>
   <!-- launch script for py automation of flappy  -->
 
+  <node name="laser_map" pkg="rviz" type="rviz" args="-d $(find flappy_automation_code)/rviz/laser_map.rviz" />
   <node name="flappy_automation_code" pkg="flappy_automation_code" type="flappy_automation_code_node.py" output="screen" />
+  <node name="flappy_controller_node" pkg="flappy_automation_code" type="controller_node.py" output="screen" />
   <node name="flappy_main_game" pkg="flappy_main_game" type="flappy.py" output="screen" />
 </launch>
